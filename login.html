@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login1</title>
+</head>
+<style>
+    #login {
+        width: 300px;
+        position: absolute;
+        right: 0;
+        top: 51px;
+        z-index: 100;
+        background-color: rgb(27, 45, 94);
+        border-radius: 0 0 5px 5px;
+    }
+
+    #login a {
+        text-decoration: none;
+    }
+
+    #open {
+        margin: 0;
+        cursor: pointer;
+        background: #58a;
+        background-position: 8px 7px;
+        color: white;
+        padding: 5px 0 5px 30px;
+        border-radius: 0 0 5px 5px;
+    }
+
+    #login .close {
+        background: yellowgreen;
+    }
+
+    #open:hover {
+        color: rgb(0, 0, 0);
+        background-color: rgb(200, 200, 200);
+    }
+
+    #login form {
+        padding: 10px 10px 0 10px;
+        display: none;
+    }
+
+    #login label {
+        font-size: .75em;
+        color: white;
+        font-weight: bold;
+        width: 100px;
+        text-align: right;
+        margin: 0 15px 0 0;
+        display: inline-block;
+    }
+
+    #login input[type="text"] {
+        font-size: 14px;
+        width: 140px;
+    }
+
+    #login .button {
+        text-align: right;
+        padding-right: 15px;
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        
+        <div class="content">
+            <div id="login">
+                <a href="form.html">
+                    <p id="open">Login</p>
+                </a>
+                <form>
+                    <p>
+                        <label for="username">Username:</label>
+                        <input type="text" name="username" id="username">
+                    </p>
+                    <p>
+                        <label for="password">Password: </label>
+                        <input type="text" name="password" id="password">
+                    </p>
+                    <p class="button">
+                        <input type="submit" name="button" id="button" value="Submit">
+                    </p>
+                </form>
+            </div>
+            <div class="main">
+                <h1>Slid
+                    e in Login Screen</h1>
+                <p>Click the login button at the top of the page</p>
+            </div>
+        </div>
+       
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+    crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        $('#open').click(function (evt) {
+            evt.preventDefault();
+            $('#login form').slideToggle(300);
+            $(this).toggleClass('close');
+        }); // end click
+    }); // end ready
+</script>
+
+</html>
