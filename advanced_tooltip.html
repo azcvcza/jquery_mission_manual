@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello World</title>
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"
+  integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI="
+  crossorigin="anonymous"></script>
+<script>
+$(document).ready(function() {
+  $('#contact').tooltip({
+  	content: $('#contactInfo').html()
+  }); // end tooltip
+}); // end ready
+</script>>
+</head>
+<body>
+<div class="wrapper">
+	
+	<div class="content">
+		<div class="main">
+			<h1>Tooltips</h1>
+			<p>You can add tooltips to anything on a page.</p>
+			<div class="row">
+			<p id="contact" title="hello">Contact Us</p>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<script id="contactInfo" type="text/template">
+	<p>You can reach us at 555-555-5555</p>
+	<p><img src="image/map.png" title="I am a map!"></p>
+</script>
+</body>
+</html>
+
