@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js" integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI="
+    crossorigin="anonymous"></script>
+<style>
+    #animate {
+        width: 200px;
+        height: 200px;
+        background-color: tomato;
+        padding: 20px;
+    }
+
+    #animate p {
+        color: black;
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+
+        <div class="content">
+            <div class="main">
+                <h1>Easing Example I</h1>
+                <div id="animate">
+                    <p>Click on me!</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script>
+    $(document).ready(function () {
+        $('#animate').click(function () {
+            $this = $(this);
+            if ($this.data('click') === 'even') {
+                $this.data('click', 'odd')
+                $this.animate({
+                        width: '200px',
+                        height: '200px'
+                    }, 1000,
+                    'easeInOutSine'); // end animate
+            } else {
+                $this.data('click', 'even');
+                $this.animate({
+                        width: '400px',
+                        height: '400px'
+                    }, 1000,
+                    'easeInBounce'); // end animate
+            }
+        }); // end click
+    }); // end ready
+</script>
+
+</html>
