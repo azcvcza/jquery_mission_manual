@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Select Menu</title>
+<link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet">
+    <style>
+        form div {
+  margin-bottom: 10px;
+  clear: both;
+}
+
+.label {
+  float: left;
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  text-align: right;
+  width: 200px;
+  padding-right: 10px;
+}
+
+input {
+  border: solid 1px #ccc;
+  border-radius: 4px;
+  height: 40px;
+  padding: 5px;
+}
+
+#next {
+  margin-left: 200px;
+}
+
+#submit {
+  margin: 0;
+}
+</style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js" integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI="
+        crossorigin="anonymous"></script>
+<script>
+$(document).ready(function() {
+  var colors = ['Barn Red', 'Beetroot', 'Brick', 'Bright Maroon', 'Burgundy'];
+	$('#redInput').autocomplete( { source : colors } );
+}); // end ready
+</script>
+</head>
+<body>
+<div class="wrapper">
+	
+	<div class="content">
+		<div class="main">
+			<h1>Autocomplete</h1>
+			<form>
+			  	<label for="redInput" class="label">Type a shade of red</label>
+			  	<input type="text" id="redInput">
+			</form>
+		</div>
+	</div>
+	
+</div>
+</body>
+</html>
