@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>News Headlines</title>
+<link href="../_css/site.css" rel="stylesheet">
+<style>
+#newslinks li {
+	display: inline-block;
+	margin-right: 20px;
+}
+#newslinks li a {
+	padding: 5px 10px; 
+	background-color: white;
+	color: black !important;
+	text-decoration: none;	
+}
+#newslinks li a:hover {
+	background-color: rgb(110,138,195);
+	color: white !important;	
+}
+#headlines #newsItem {
+	margin-top: 10px;
+	padding: 20px;
+	border: 1px solid white;	
+}
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"
+  integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI="
+  crossorigin="anonymous"></script>
+<script>
+$(document).ready(function() {
+  $('#newslinks a').click(function() {
+     var url=$(this).attr('href');
+     $('#headlines').load(url + ' #newsItem');
+     return false;
+  }); //end click
+			
+}); // end ready
+</script>
+</head>
+<body>
+<div class="wrapper">
+	
+	<div class="content">
+		<div class="main">
+			<h1>News Headlines</h1>
+			<ul id="newslinks">
+			<li><a href="today.html">Today&#8217;s News</a></li>
+    <li><a href="yesterday.html">Yesterday&#8217;s News</a></li>
+    <li><a href="lastweek.html">Last Week&#8217;s News</a></li>
+			</ul>
+			<div id="headlines"></div>
+		</div>
+	</div>
+	
+</div>
+</body>
+</html>
