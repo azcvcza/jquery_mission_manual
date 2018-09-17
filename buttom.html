@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQueryUI Button Widget</title>
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet">
+    <style>
+        form div {
+  margin-bottom: 10px;
+  clear: both;
+}
+
+.label {
+  float: left;
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  text-align: right;
+  width: 200px;
+  padding-right: 10px;
+}
+
+input {
+  border: solid 1px #ccc;
+  border-radius: 4px;
+  height: 40px;
+  padding: 5px;
+}
+
+#next {
+  margin-left: 200px;
+}
+
+#submit {
+  margin: 0;
+}
+</style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js" integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI="
+        crossorigin="anonymous"></script>
+    
+    <script>
+        var airports = [
+  { value : "PDX", label: "Portland International Airport, Portland, OR" },
+  { value : "SFO", label: "San Francisco, CA" },
+  { value : "SJC", label: "San Jose, CA" },
+  { value : "KOA", label: "Keahole, HI" },
+  { value : "ORD", label: "Chicago O'Hare International Airport, Chicago, IL" },
+  { value : "MDW", label: "Chicago Midway Airport, Chicago, IL" },
+  { value : "JFK", label: "John F. Kennedy International Airport, New York, NY" },
+  { value : "LGA", label: "La Guardia Airport, New York, NY" },
+  { value : "IAD", label: "Washington Dulles International Airport, Washington, DC" },
+  { value : "CDG", label: "Charles De Gaulle International Airport, Paris, France" },
+  { value : "CGH", label: "Congonhas International Airport, Sao Paulo, Brazil" },
+  { value : "CGK", label: "Soekarno-Hatta International Airport, Jakarta, Indonesia" },
+  { value : "LHR", label: "London Heathrow Airport, London, United Kingdom" },
+  { value : "FRA", label: "Frankfurt International Airport, Frankfurt, Germany" },
+  { value : "HND", label: "Tokyo International Airport, Tokyo, Japan" },
+];
+$(document).ready(function() {
+   $('#radio').buttonset();
+   $('#check').buttonset();
+   $('#button').button({
+   	icons : {
+   		secondary : 'ui-icon-circle-arrow-e'
+   	}
+   });
+   $('#submit').button();
+}); // end ready
+</script>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <div class="content">
+            <div class="main">
+                <h1>jQueryUI Button Widget</h1>
+                <form>
+                    <div id="radio">
+                        <p class="label">Number of bags to check</p>
+                        <input type="radio" id="none" name="bags" checked="checked">
+                        <label for="none">0</label>
+
+                        <input type="radio" id="one" name="bags">
+                        <label for="one">1</label>
+
+                        <input type="radio" id="two" name="bags">
+                        <label for="two">2</label>
+                    </div>
+                    <div id="check">
+                        <p class="label">Checkboxes</p>
+                        <input type="checkbox" id="aisle" name="aisle">
+                        <label for="aisle">Aisle</label>
+
+                        <input type="checkbox" id="window" name="window">
+                        <label for="window">Window</label>
+
+                        <input type="checkbox" id="exit" name="exit">
+                        <label for="exit">Exit Row</label>
+
+                        <input type="checkbox" id="any" name="any">
+                        <label for="any">Any seat</label>
+                    </div>
+                    <div>
+                        <p class="label">A Button Element</p>
+                        <button id="button">&lt;button&gt;</button>
+                    </div>
+                    <div>
+                        <p class="label">A Submit Button</p>
+                        <input type="submit" value="Submit this form!" id="submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
