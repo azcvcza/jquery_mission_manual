@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Using .find()</title>
+<link href="css/site.css" rel="stylesheet">
+<style>
+#gallery a {
+	display: inline-block;
+	margin: 10px;
+	position: relative;	
+}
+</style>
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('#gallery a').click(function() {
+	 $(this).siblings('a').fadeTo(500,.3)
+						  .animate({left:'-=20px'},200)
+						  .animate({left:'+=20px'},250) 
+						  .fadeTo(250,1);
+  }); // end click
+}); // end ready
+</script>
+</head>
+<body>
+<div class="wrapper">
+	
+	<div class="content">
+	  <div class="main">
+	    <h1>Using .siblings()</h1>
+            <div id="gallery"><a href="#"><img src="image/zoom_out.png" width="80" height="80" alt="zoom"></a> <a href="#"><img src="image/vacancy.png" width="80" height="80" alt="vacnacy"></a><a href="#"><img src="image/user.png" width="80" height="80" alt="user"></a><a href="#"><img src="image/upload.png" width="80" height="80" alt="upload"></a><a href="#"><img src="image/undo.png" width="80" height="80" alt="undo"></a><a href="#"><img src="image/support.png" width="80" height="80" alt="support"></a><a href="#"><img src="image/stop_sign.png" width="80" height="80" alt="stop"></a><a href="#"><img src="image/smiley.png" width="80" height="80" alt="smiley"></a><a href="#"><img src="image/newsletter.png" width="80" height="80" alt="newsletter"></a><a href="#"><img src="image/lock.png" width="80" height="80" alt="lock"></a><a href="#"><img src="image/group.png" width="80" height="80" alt="group"></a><a href="#"><img src="image/export.png" width="80" height="80" alt="export"></a><a href="#"><img src="image/email.png" width="80" height="80" alt="email"></a><a href="#"><img src="image/digital_camera.png" width="80" height="80" alt="camera"></a><a href="#"><img src="image/configuration.png" width="80" height="80" alt="config"></a><a href="#"><img src="image/bar_chart.png" width="80" height="80" alt="bar chart"></a><a href="#"><img src="image/attachment.png" width="80" height="80" alt="attachement"></a><a href="#"><img src="image/addressbook.png" width="80" height="80" alt="addressbook"></a></div>
+	  </div>
+  </div>
+	
+</div>
+</body>
+</html>
